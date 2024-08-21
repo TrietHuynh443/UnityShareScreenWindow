@@ -21,34 +21,40 @@ public class ShareScreen : MonoBehaviour
 
     private void Start()
     {
-        _screen = GetComponent<RawImage>();
+        _screen = GetComponentInChildren<RawImage>();
     }
     private void OnEnable()
     {
-        if (_onScreenSelectedSO.SelectedGameObject == null)
+        if (_onScreenSelectedSO == null)
+        {
+            _screenName = ScreenShareHelper.EntireScreen;
+        }
+        else if (_onScreenSelectedSO.SelectedGameObject == null)
         {
             gameObject.SetActive(false);
+            return;
         }
         else
         {
             _screenName = _onScreenSelectedSO.SelectedGameObject.name;
-            StartShareScreen();
         }
+        StartShareScreen();
     }
 
     private void StartShareScreen()
     {
         IntPtr hwnd = ScreenShareHelper.GetScreen(_screenName);
-        if (hwnd == IntPtr.Zero)
+        if (hwnd == IntPtr.Zero && _screenName != ScreenShareHelper.EntireScreen)
         {
             gameObject.SetActive(false);
             return;
         }
 
         _onShareScreenEventSO?.RaiseOnStartShareEvent();
-
+        _isBlocking = false;
         _isSharing = true;
         _lastUpdate = Time.time;
+        ScreenShareHelper.PopupWindow(hwnd);
     }
 
 
@@ -61,7 +67,6 @@ public class ShareScreen : MonoBehaviour
 
         }
     }
-    Texture2D texture;
     private bool _isBlocking;
 
     // Update is called once per frame
@@ -72,8 +77,8 @@ public class ShareScreen : MonoBehaviour
             _isBlocking = true;
             //_screen.texture = ScreenShareHelper.GetTexture(_screenName);
             Bitmap bitmap = null;
-            texture = _screen.texture as Texture2D;
             CancellationTokenSource cts = new CancellationTokenSource();
+            Debug.Log(_lastUpdate);
 
             Task.Run(() =>
             {
@@ -83,12 +88,21 @@ public class ShareScreen : MonoBehaviour
             }, cts.Token)
             .ContinueWith(task =>
             {
+                if (task.IsFaulted)
+                {
+                    Debug.Log("Task isFaulted");
+
+                }
+                if (task.IsCanceled)
+                {
+                    Debug.Log("Task cancled");
+                }
                 if (task.IsCompleted)
                 {
                     Texture2D oldtexture = _screen.texture as Texture2D;
                     _screen.texture = ScreenShareHelper.GetTextureFromBitmap(bitmap);
                     Destroy(oldtexture);
-                    _onShareScreenEventSO.RaiseOnNewFrameArriveEvent(_screen.texture as Texture2D);
+                    _onShareScreenEventSO?.RaiseOnNewFrameArriveEvent(_screen.texture as Texture2D);
                     _lastUpdate = Time.time;
                     _isBlocking = false;
                 }

@@ -18,7 +18,7 @@ using DWORD = System.UInt32;
 using HDC = System.IntPtr;
 using UINT = System.UInt32;
 using WORD = System.UInt16;
-public class Test : MonoBehaviour
+public class PreviewWindowsHandler : MonoBehaviour
 {
 
 
@@ -80,7 +80,6 @@ public class Test : MonoBehaviour
         IntervalUpdateApp();
         if (Time.time - _lastUpdateDesktopTime >= 1 / _previewFrame)
         {
-            Debug.Log("Last Thread Count: " + _tasks.Count);
             _tasks.Clear();
             _isBlocking = true;
             foreach (var win in windows.Keys)

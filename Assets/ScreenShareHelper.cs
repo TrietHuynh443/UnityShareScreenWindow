@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
@@ -103,6 +104,12 @@ public class ScreenShareHelper
     [DllImport("user32.dll", SetLastError = true)]
     private static extern bool SetForegroundWindow(IntPtr hWnd);
 
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern IntPtr GetDesktopWindow();
+
+    [DllImport("user32.dll")]
+    private static extern int GetSystemMetrics(int nIndex);
+
     [DllImport("gdi32.dll", SetLastError = true)]
     private static extern int GetObject(IntPtr handle, int numBytes, out BitMap @object);
 
@@ -120,9 +127,10 @@ public class ScreenShareHelper
         public int bottom;
     }
 
+    public static IntPtr EntireHwnd => IntPtr.Zero;
 
     private static Dictionary<string, IntPtr> windows = new();
-
+    public static string EntireScreen = "EntireScreen";
 
     public static Dictionary<string, IntPtr> GetAllTopWindows()
     {
@@ -135,26 +143,45 @@ public class ScreenShareHelper
 
     public static Bitmap CaptureWindow(string screenName)
     {
-        if (!windows.ContainsKey(screenName))
+        IntPtr hwnd = IntPtr.Zero;
+        int width = GetSystemMetrics(0); // SM_CXSCREEN
+        int height = GetSystemMetrics(1); // SM_CYSCREEN
+
+
+        if (screenName == EntireScreen)
+        {
+            hwnd = EntireHwnd;
+        }
+        else if (!windows.ContainsKey(screenName))
         {
             return null;
         }
-        IntPtr hwnd = windows[screenName];
+        else
+        {
+            hwnd = windows[screenName];
+            RECT windowRect = new RECT();
+            GetWindowRect(hwnd, ref windowRect);
+
+            width = windowRect.right - windowRect.left;
+            height = windowRect.bottom - windowRect.top;
+        }
         IntPtr hdcSrc = GetWindowDC(hwnd);
         IntPtr hdcDest = CreateCompatibleDC(hdcSrc);
 
-        RECT windowRect = new RECT();
-        GetWindowRect(hwnd, ref windowRect);
-
-        int width = windowRect.right - windowRect.left;
-        int height = windowRect.bottom - windowRect.top;
 
         IntPtr hBitmap = CreateCompatibleBitmap(hdcSrc, width, height);
         IntPtr hOld = SelectObject(hdcDest, hBitmap);
 
         // Use the SRCCOPY ROP code defined earlier
         // Using PrintWindow instead of BitBlt
-        PrintWindow(hwnd, hdcDest, 2);
+        if (screenName == EntireScreen)
+        {
+            BitBlt(hdcDest, 0, 0, width, height, hdcSrc, 0, 0, ROPCodes.SRCCOPY);
+        }
+        else
+        {
+            PrintWindow(hwnd, hdcDest, 2);
+        }
 
         Bitmap bmp = Bitmap.FromHbitmap(hBitmap);
 
@@ -199,6 +226,10 @@ public class ScreenShareHelper
 
     public static IntPtr GetScreen(string name)
     {
+        if (name == EntireScreen)
+        {
+            return EntireHwnd;
+        }
         if (windows.ContainsKey(name))
         {
             return windows[name];
@@ -233,6 +264,7 @@ public class ScreenShareHelper
         }
         SetForegroundWindow(hwnd);
     }
+
 }
 
 
