@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Universal.Common.Forms</name>
+    </assembly>
+    <members>
+        <member name="T:Universal.Common.Forms.ImageSignature">
+            <summary>
+            Class representing a signature stored as an image file.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.IPositionChangedObservable">
+            <summary>
+            Represents a widget whose position can be changed and observed.
+            </summary>
+        </member>
+        <member name="E:Universal.Common.Forms.IPositionChangedObservable.PositionChanged">
+            <summary>
+            Raised when the widget's position has been changed.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.ISignature">
+            <summary>
+            Represents a signature that can be converted to an image.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.IToggle">
+            <summary>
+            Represents a two-state toggle.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.IToggle.Toggled">
+            <summary>
+            Gets or sets the state of the toggle.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Forms.IToggle.Toggle">
+            <summary>
+            Toggles the state of the toggle.
+            </summary>
+        </member>
+        <member name="E:Universal.Common.Forms.IToggle.ToggleChanged">
+            <summary>
+            Raised when the toggle state is changed.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.IValueChangedObservable">
+            <summary>
+            Represents a form widget or control that holds a value that can be observed.
+            </summary>
+        </member>
+        <member name="E:Universal.Common.Forms.IValueChangedObservable.ValueChanged">
+            <summary>
+            Raised when a the value of the widget changes.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.IValueChangedObservable`1">
+            <summary>
+            Represents a form widget or control that holds a value that can be observed.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.IValueHolder">
+            <summary>
+            Represents a form widget or control that holds a value.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.IValueHolder.Value">
+            <summary>
+            Gets or sets the value held by the widget.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.IValueHolder`1">
+            <summary>
+            Represents a form widget or control that holds a value.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Universal.Common.Forms.IValueHolder`1.Value">
+            <summary>
+            Gets or sets the value held by the widget.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.PositionChangedEventArgs">
+            <summary>
+            Represents data on a 2D plane when positions or location of a widget has changed.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.PositionChangedEventArgs.X">
+            <summary>
+            Gets the X coordinates of the new position.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.PositionChangedEventArgs.Y">
+            <summary>
+            Gets the Y coordinates of the new position.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.ToggleChangedEventArgs">
+            <summary>
+            Represents data about a toggle state change event.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.ToggleChangedEventArgs.Toggled">
+            <summary>
+            Gets a value indicating that the toggle has been toggled.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.Trilean">
+            <summary>
+            Represents a tri-state boolean.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.Trilean.True">
+            <summary>
+            Gets an instance that represents the true state.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.Trilean.False">
+            <summary>
+            Gets an instance that represents the false state.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.Trilean.Indeterminate">
+            <summary>
+            Gets an instance that represents the indeterminate state.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.ValueWithComment`1">
+            <summary>
+            Represents a field with an associated string comment.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Universal.Common.Forms.ValueWithComment`1.Value">
+            <summary>
+            Gets or sets the value of the field.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.ValueWithComment`1.Comment">
+            <summary>
+            Gets or sets the associated comment.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.Forms.VectorSignature">
+            <summary>
+            Class representing a signature stored as a series of segments.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.VectorSignature.Width">
+            <summary>
+            Gets the width of the signature bounding box.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.VectorSignature.Height">
+            <summary>
+            Gets the width of the signature bounding box.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Forms.VectorSignature.Segments">
+            <summary>
+            Gets the segments in the signature.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Forms.VectorSignature.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.Forms.VectorSignature"/> class with the given bounding box size.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:Universal.Common.Forms.VectorSignature.AddSegment(System.Collections.Generic.IEnumerable{System.ValueTuple{System.Double,System.Double}})">
+            <summary>
+            Adds the given line segment to the <see cref="T:Universal.Common.Forms.VectorSignature"/>.
+            </summary>
+            <param name="segment"></param>
+        </member>
+        <member name="M:Universal.Common.Forms.VectorSignature.Clear">
+            <summary>
+            Removes all segments from the <see cref="T:Universal.Common.Forms.VectorSignature"/>
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Forms.VectorSignature.ToImage">
+            <summary>
+            Gets an image representation of the <see cref="T:Universal.Common.Forms.VectorSignature"/>.
+            Throws a <see cref="T:System.NotImplementedException"/> due to lack of true support for System.Drawing APIs across .NET Standard 2.1.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

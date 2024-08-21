@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Universal.UniversalWindowsPlatform</id>
+    <version>0.1.3.1</version>
+    <title>Universal.UniversalWindowsPlatform</title>
+    <authors>Andrew Ong</authors>
+    <owners>Andrew Ong</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">CC0-1.0</license>
+    <licenseUrl>https://licenses.nuget.org/CC0-1.0</licenseUrl>
+    <description>Class library for accelerating UWP application development.</description>
+    <releaseNotes>Fixed issue with Descendants not returning the children of the target element.</releaseNotes>
+    <copyright>Copyright 2019-2020</copyright>
+    <tags>Universal Windows Platform UWP Extensions Widget Trilean Signature</tags>
+    <dependencies>
+      <dependency id="Universal.Common" version="6.4.5" />
+      <dependency id="Universal.Common.Forms" version="0.5.0" />
+    </dependencies>
+  </metadata>
+</package>

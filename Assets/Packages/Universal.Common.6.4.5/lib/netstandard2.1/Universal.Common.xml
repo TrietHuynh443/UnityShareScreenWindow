@@ -1,0 +1,2725 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Universal.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Universal.Common.BitSequence">
+            <summary>
+            A class that represents a sequence of bits in the given order.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.BitSequence.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.BitSequence"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.BitSequence.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.BitSequence"/> with the specified number of bits set to off.
+            </summary>
+            <param name="length"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.#ctor(System.Collections.Generic.IEnumerable{System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.BitSequence"/> class from the values contained in a given enumerable instance.
+            </summary>
+            <param name="sequence"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.BitSequence"/> class from the values given in the binary representation as a string.
+            </summary>
+            <param name="binaryRepresentation"></param>
+        </member>
+        <member name="P:Universal.Common.BitSequence.Item(System.Int32)">
+            <summary>
+            Returns the bit at the given index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Universal.Common.BitSequence.Count">
+            <summary>
+            Returns the number of bits given in the current sequence.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.BitSequence.Length">
+            <summary>
+            Returns the number of bits given in the current sequence.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.BitSequence.IsReadOnly">
+            <summary>
+            Returns true if the current <see cref="T:Universal.Common.BitSequence"/> is read-only.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.BitSequence.Add(System.Boolean)">
+            <summary>
+            Adds a given bit to sequence.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.Add(System.String)">
+            <summary>
+            Adds the given bits represented as a binary string to the <see cref="T:Universal.Common.BitSequence"/>.
+            </summary>
+            <param name="binaryRepresentation"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.Add(System.Collections.Generic.IEnumerable{System.Boolean})">
+            <summary>
+            Adds the bits in the given collection to the end of the <see cref="T:Universal.Common.BitSequence"/>.
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.Clear">
+            <summary>
+            Clears all bits in the sequence.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.BitSequence.RemoveAt(System.Int32)">
+            <summary>
+            Removes the bit at the given index.
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.GetOctet(System.Int32)">
+            <summary>
+            Returns the i-th octet of this <see cref="T:Universal.Common.BitSequence"/>.
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToBitArray">
+            <summary>
+            Returns a new instance of the <see cref="T:System.Collections.BitArray"/> class from this sequence.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToByte">
+            <summary>
+            Returns a byte representation of the current sequence of bits.
+            A sequence of "00000001" will be converted to 0b_00000001 and so on.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToByteArray">
+            <summary>
+            Returns a byte array representation of the current sequence of bits, based on piecewise conversion of each 8-bit group into bytes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToString">
+            <summary>
+            Returns a binary string representation of the current sequence of bits.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToUInt16">
+            <summary>
+            Returns an unsigned short that has the binary representation of the given bits. Short sequences are padded on the left (of the binary representation) with off bits and long sequences are truncated from the left until the required length is achieved.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToUInt32">
+            <summary>
+            Returns an unsigned int that has the binary representation of the given bits. Short sequences are padded on the left (of the binary representation) with off bits and long sequences are truncated from the left until the required length is achieved.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.ToUInt64">
+            <summary>
+            Returns an unsigned long that has the binary representation of the given bits. Short sequences are padded on the left (of the binary representation) with off bits and long sequences are truncated from the left until the required length is achieved.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_Implicit(System.String)~Universal.Common.BitSequence">
+            <summary>
+            Converts the given binary representation to a <see cref="T:Universal.Common.BitSequence"/> object.
+            </summary>
+            <param name="binaryRepresentation"></param>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_BitwiseAnd(Universal.Common.BitSequence,Universal.Common.BitSequence)">
+            <summary>
+            Returns a new <see cref="T:Universal.Common.BitSequence"/> which has bits set if and only if the corresponding bits in the two sequences are set.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_BitwiseOr(Universal.Common.BitSequence,Universal.Common.BitSequence)">
+            <summary>
+            Returns a new <see cref="T:Universal.Common.BitSequence"/> which has bits set if any of the bits in the corresponding position in the two sequences are set.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_ExclusiveOr(Universal.Common.BitSequence,Universal.Common.BitSequence)">
+            <summary>
+            Returns a new <see cref="T:Universal.Common.BitSequence"/> which has bits set if either, but not both of the sequences have their bits set.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_LeftShift(Universal.Common.BitSequence,System.Int32)">
+            <summary>
+            Returns a new <see cref="T:Universal.Common.BitSequence"/> with the bits left-shifted by the given number of positions.
+            Right-side bits outside the index are set to off.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_RightShift(Universal.Common.BitSequence,System.Int32)">
+            <summary>
+            Returns a new <see cref="T:Universal.Common.BitSequence"/> with the bits right-shifted by the given number of positions.
+            Left-side bits outside the index are set to off.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_OnesComplement(Universal.Common.BitSequence)">
+            <summary>
+            Flips the bits in the given sequence.
+            </summary>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_Equality(Universal.Common.BitSequence,Universal.Common.BitSequence)">
+            <summary>
+            Returns if two <see cref="T:Universal.Common.BitSequence"/> instances are sequence equals.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.op_Inequality(Universal.Common.BitSequence,Universal.Common.BitSequence)">
+            <summary>
+            Returns the negation of lhs == rhs.
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.BitSequence.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Universal.Common.BitSequence.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:Universal.Common.BitSequences">
+            <summary>
+            Contains static methods related to <see cref="T:Universal.Common.BitSequence"/>s.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.BitSequences.OfLength(System.Int32)">
+            <summary>
+            Returns all <see cref="T:Universal.Common.BitSequence"/>s of the given length.
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.CyclicEnumerator`1">
+            <summary>
+            <see cref="T:System.Collections.Generic.IEnumerator`1"/> that wraps an internal <see cref="T:System.Collections.Generic.IEnumerator`1"/> and keeps looping.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Universal.Common.DataUri">
+            <summary>
+            Provides an object representation of a data uniform resource identifier (URI).
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUri.OriginalString">
+            <summary>
+            Gets the string that was passed to the constructor.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUri.Scheme">
+            <summary>
+            Gets a string indicating the scheme of the <see cref="T:Universal.Common.DataUri"/>, which is always "data".
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUri.MediaType">
+            <summary>
+            Gets a value indicating the media type of this data URI, if any.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUri.MediaTypeParameters">
+            <summary>
+            Gets a value containing the attribute parameters and their values.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUri.IsBase64">
+            <summary>
+            Gets a value indicating if the data segment is a base-64 encoded string or plain text.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUri.Data">
+            <summary>
+            Gets the value of the data segment.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.DataUri.#ctor(System.String)">
+            <summary>
+            <inheritdoc />
+            </summary>
+            <param name="uriString"></param>
+        </member>
+        <member name="T:Universal.Common.DataUriBuilder">
+            <summary>
+            Class to facilitate construction of <see cref="P:Universal.Common.DataUriBuilder.DataUri"/>s.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUriBuilder.Data">
+            <summary>
+            Gets the current value of the data segment.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUriBuilder.DataUri">
+            <summary>
+            Returns the constructed <see cref="P:Universal.Common.DataUriBuilder.DataUri"/>.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUriBuilder.MediaType">
+            <summary>
+            Gets or sets the Media Type value of the data URI.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUriBuilder.MediaTypeParameters">
+            <summary>
+            Gets or sets the attribute and value pairs following the media type.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.DataUriBuilder.IsBase64">
+            <summary>
+            Gets or sets a value indicating if the data segment is a base-64 encoded string.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.DataUriBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.DataUriBuilder"/> with the given URI.
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.DataUriBuilder"/> with the given URI.
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.SetData(System.String)">
+            <summary>
+            Sets the data segment to the given value.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.SetData(System.Byte[])">
+            <summary>
+            Sets the data segment to the base-64 encoding of the given byte array, also setting the base-64 flag.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.AddParameter(System.String,System.String)">
+            <summary>
+            Adds the given attribute and value pair to the parameters.
+            </summary>
+            <param name="attribute"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.SetMediaType(System.String)">
+            <summary>
+            Sets the media type of the data URI.
+            </summary>
+            <param name="mediaType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.SetMediaType(Universal.Common.MediaType)">
+            <summary>
+            Sets the media type of the data URI.
+            </summary>
+            <param name="mediaType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.SetBase64(System.Boolean)">
+            <summary>
+            Sets or unsets the base-64 flag for the data URI.
+            </summary>
+            <param name="isBase64"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.DataUriBuilder.SetCharset(System.String)">
+            <summary>
+            Sets the charset attribute for the data URI.
+            </summary>
+            <param name="charset"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.DateTimeRange">
+            <summary>
+            Represents a range of <see cref="T:System.DateTime"/>.
+            </summary>
+        </member>
+        <member name="T:Universal.Common.EventArgs`1">
+            <summary>
+            A generic version of <see cref="T:System.EventArgs"/> with one data member.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Universal.Common.EventArgs`1.Data">
+            <summary>
+            Gets the data member.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.EventArgs`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.EventArgs`1"/> class with the data member set to the default value.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.EventArgs`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.EventArgs`1"/> class.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:Universal.Common.EventHandler`2">
+            <summary>
+            Represents the method that will handle an event and returns a result.
+            </summary>
+            <typeparam name="TEventArgs">The type of event data generated by the event.</typeparam>
+            <typeparam name="TResult">The return type of the method handling the event.</typeparam>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.InitializationException">
+            <summary>
+            Represents an error that occurs during construction of an object.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.InitializationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InitializationException"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.InitializationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InitializationException"/> class with a specified error.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Universal.Common.InitializationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InitializationException"/> class with a specified error and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Universal.Common.InternalStateException">
+            <summary>
+            Represents an error that occurs because the internal state of an object is invalid.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.InternalStateException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InternalStateException"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.InternalStateException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InternalStateException"/> class with a specified error.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Universal.Common.InternalStateException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InternalStateException"/> class with a specified error and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Universal.Common.ProcessException">
+            <summary>
+            Represents errors in executing an external process.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.ProcessException.ExitCode">
+            <summary>
+            Gets the exit code the <see cref="T:System.Diagnostics.Process"/> provided.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.ProcessException.StandardOutput">
+            <summary>
+            Gets the content of the standard output stream of the <see cref="T:System.Diagnostics.Process"/>.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.ProcessException.StandardError">
+            <summary>
+            Gets the content of the standard error stream of the <see cref="T:System.Diagnostics.Process"/>.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.ProcessException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.ProcessException"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.ProcessException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.ProcessException"/> class.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Universal.Common.ProcessException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.ProcessException"/> class.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Universal.Common.ProcessException.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.ProcessException"/> class.
+            </summary>
+            <param name="exitCode"></param>
+            <param name="standardOutput"></param>
+            <param name="standardError"></param>
+        </member>
+        <member name="T:Universal.Common.TypeMismatchException">
+            <summary>
+            Represents an error where a program cannot continue because it received an object but of the wrong type.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.TypeMismatchException.ExpectedType">
+            <summary>
+            The type that was expected.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.TypeMismatchException.ActualType">
+            <summary>
+            The type that was received.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.TypeMismatchException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.TypeMismatchException"/>.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.TypeMismatchException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Universal.Common.TypeMismatchException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.TypeMismatchException"/>.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Universal.Common.TypeMismatchException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.TypeMismatchException"/>.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Universal.Common.TypeMismatchException.#ctor(System.Type,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.TypeMismatchException"/> class with the given type parameters.
+            </summary>
+            <param name="expected"></param>
+            <param name="actual"></param>
+        </member>
+        <member name="T:Universal.Common.UnexpectedOutcomeException">
+            <summary>
+            Represents an error that a program cannot continue its execution because a function call or action did not produce the expected outcome.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.UnexpectedOutcomeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.UnexpectedOutcomeException"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.UnexpectedOutcomeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.UnexpectedOutcomeException"/> class with a specified error.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Universal.Common.UnexpectedOutcomeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Universal.Common.InitializationException"/> class with a specified error and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Universal.Common.ExecutableProcess">
+            <summary>
+            Represents an executable process.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.#ctor(System.String)">
+            <summary>
+            Initializes a new <see cref="T:Universal.Common.ExecutableProcess"/> with the given executable file.
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.Execute(System.String[])">
+            <summary>
+            Executes the process and retrieves its standard output.
+            </summary>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.Execute(System.TimeSpan,System.String[])">
+            <summary>
+            Executes the process and retrieves its standard output, killing it if it hasn't finished executing after the given timeout.
+            </summary>
+            <param name="timeout"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.ExecuteAsync(System.String[])">
+            <summary>
+            Executes the process asynchronously and retrieves its standard output.
+            </summary>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.ExecuteAsync(System.TimeSpan,System.String[])">
+            <summary>
+            Executes the process asynchronously and retrieves its standard output, killing it if it hasn't finished executing after the given timeout.
+            </summary>
+            <param name="timeout"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.ConfigureProcessStartInfo(System.Diagnostics.ProcessStartInfo)">
+            <summary>
+            Called when setting up <see cref="P:System.Diagnostics.Process.StartInfo"/>.
+            </summary>
+            <param name="processStartInfo"></param>
+        </member>
+        <member name="M:Universal.Common.ExecutableProcess.HandleExit(System.Int32,System.String,System.String)">
+            <summary>
+            Called when a process exits and the status code should be examined.
+            The default implementation throws an except on non-zero exit codes.
+            </summary>
+            <param name="exitCode"></param>
+            <param name="standardOutput"></param>
+            <param name="standardError"></param>
+        </member>
+        <member name="T:Universal.Common.Extensions.ArrayExtensions">
+            <summary>
+            Extensions for arrays.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.ArrayExtensions.ColumnMajor``1(``0[0:,0:])">
+            <summary>
+            Iterates through the given 2-dimensional array and returns the elements in column-major fashion.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="matrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ArrayExtensions.RowMajor``1(``0[0:,0:])">
+            <summary>
+            Iterates through the given 2-dimensional array and returns the elements in row-major fashion.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="matrix"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.BitArrayExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Collections.BitArray"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.BitArrayExtensions.Set(System.Collections.BitArray,System.Int32,System.Collections.BitArray)">
+            <summary>
+            Sets the bits at starting at the given index of the current <see cref="T:System.Collections.BitArray"/> with the values from the provided <see cref="T:System.Collections.BitArray"/>.
+            </summary>
+            <param name="BitArray"></param>
+            <param name="index"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.BitArrayExtensions.Subarray(System.Collections.BitArray,System.Int32)">
+            <summary>
+            Returns the subarray of a given <see cref="T:System.Collections.BitArray"/> with elements starting from the given index to the end of the array.
+            </summary>
+            <param name="BitArray"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.BitArrayExtensions.Subarray(System.Collections.BitArray,System.Int32,System.Int32)">
+            <summary>
+            Returns the subarray from a <see cref="T:System.Collections.BitArray"/> starting at a given index for a given length.
+            </summary>
+            <param name="BitArray"></param>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.BitArrayExtensions.ToBitSequence(System.Collections.BitArray)">
+            <summary>
+            Converts the given <see cref="T:System.Collections.BitArray"/> to a <see cref="T:Universal.Common.BitSequence"/>.
+            </summary>
+            <param name="BitArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.BitArrayExtensions.ToByteArray(System.Collections.BitArray)">
+            <summary>
+            Converts the given <see cref="T:System.Collections.BitArray"/> to a byte array.
+            </summary>
+            <param name="BitArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.BitArrayExtensions.ToStringRepresentation(System.Collections.BitArray)">
+            <summary>
+            Returns the binary string representation of the given <see cref="T:System.Collections.BitArray"/>.
+            Note that as the least significant bit is stored in the lowest index, the indices of the bits in the
+            resulting string representation of the bit array is reversed.
+            </summary>
+            <param name="BitArray"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.ByteArrayExtensions">
+            <summary>
+            Extensions for byte arrays.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.StartsWith(System.Byte[],System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            Determines whether the start of this byte array matches the given sequence.
+            </summary>
+            <param name="byteArray"></param>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.EndsWith(System.Byte[],System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            Determines whether the end of this byte array matches the given sequence.
+            </summary>
+            <param name="byteArray"></param>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.ToBase32String(System.Byte[])">
+            <summary>
+            Converts the given bytes to a base-32 encoded string.
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.ToBase64String(System.Byte[])">
+            <summary>
+            Returns the base-64 representation of the given bytes.
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.ToBase64UrlSafeString(System.Byte[])">
+            <summary>
+            Returns the base-64 representation of the given bytes in the RFC 4648 URL-safe scheme.
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.ToBitArray(System.Byte[])">
+            <summary>
+            Converts the byte array to a <see cref="T:System.Collections.BitArray"/>.
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.ToBitArray(System.Byte[],System.Int32)">
+            <summary>
+            Converts the byte array to a <see cref="T:System.Collections.BitArray"/> of the given length. Any additional bits are discarded.
+            </summary>
+            <param name="byteArray"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteArrayExtensions.ToBitSequence(System.Byte[])">
+            <summary>
+            Returns a bit sequence representative of each byte in the array.
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteExtensions.ToBitArray(System.Byte)">
+            <summary>
+            Converts the given byte to a <see cref="T:System.Collections.BitArray"/> of length 8.
+            </summary>
+            <param name="byte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteExtensions.ToBitArray(System.Byte,System.Int32)">
+            <summary>
+            Converts the given byte to a <see cref="T:System.Collections.BitArray"/> of the given length. Additional bits are discarded.
+            </summary>
+            <param name="byte"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteExtensions.ToBitSequence(System.Byte)">
+            <summary>
+            Converts the given byte to a <see cref="T:Universal.Common.BitSequence"/> of length 8.
+            </summary>
+            <param name="byte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.ByteExtensions.ToBitSequence(System.Byte,System.Int32)">
+            <summary>
+            Converts the given byte to a <see cref="T:Universal.Common.BitSequence"/> of the specified length. Additional bits are discarded.
+            </summary>
+            <param name="byte"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.CharExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Char"/>.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.Equals(System.Char,System.Char,System.StringComparison)">
+            <summary>
+            Determines whether this character and a specified <see cref="T:System.Char"/> have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.
+            </summary>
+            <param name="char"></param>
+            <param name="value"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsControl(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a control character.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsDigit(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a decimal digit.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsLetter(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a Unicode letter.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsLetterOrDigit(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a letter or decimal digit.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsLower(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a lowercase letter.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsNumber(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a number.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsPunctuation(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a punctuation mark.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsSeparator(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a separator character.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsSymbol(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as a symbol character.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsWhiteSpace(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as white space.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.IsUpper(System.Char)">
+            <summary>
+            Indicates whether the specified Unicode character is categorized as an uppercase letter.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToEscapedUnicode(System.Char)">
+            <summary>
+            Returns the unicode representation of <paramref name="char"/>.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToLower(System.Char)">
+            <summary>
+            Converts the value of a Unicode character to its lowercase equivalent.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToLower(System.Char,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the value of a Unicode character to its lowercase equivalent using specified culture-specific formatting information.
+            </summary>
+            <param name="char"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToLowerInvariant(System.Char)">
+            <summary>
+            Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToSubscript(System.Char)">
+            <summary>
+            Returns the unicode subscript representation of the given character.
+            Throws an exception if no conversion is available.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToSuperscript(System.Char)">
+            <summary>
+            Returns the unicode superscript representation of the given character.
+            Throws an exception if no conversion is available.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToUpper(System.Char)">
+            <summary>
+            Converts the value of a Unicode character to its uppercase equivalent.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToUpper(System.Char,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
+            </summary>
+            <param name="char"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.CharExtensions.ToUpperInvariant(System.Char)">
+            <summary>
+            Converts the value of a specified Unicode character to its uppercase equivalent using the casing rules of the invariant culture.
+            </summary>
+            <param name="char"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.ComplexExtensions">
+            <summary>
+            Extensions for the <see cref="T:System.Numerics.Complex"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.ComplexExtensions.EqualsApproximately(System.Numerics.Complex,System.Numerics.Complex,System.Double)">
+            <summary>
+            Returns true if two <see cref="T:System.Numerics.Complex"/> numbers are equals to a given tolerance.
+            </summary>
+            <param name="Complex"></param>
+            <param name="obj"></param>
+            <param name="delta"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.ConcurrentQueueExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.ConcurrentQueueExtensions.Clear``1(System.Collections.Concurrent.ConcurrentQueue{``0})">
+            <summary>
+            Clears the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"/> of all values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ConcurrentQueue"></param>
+        </member>
+        <member name="T:Universal.Common.Extensions.DateTimeExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.DateTime"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.DateTimeExtensions.AddWeeks(System.DateTime,System.Double)">
+            <summary>
+            Returns a new <see cref="T:System.DateTime"/> that adds the specified number of weeks to this instance.
+            </summary>
+            <param name="DateTime"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DateTimeExtensions.IsWeekday(System.DateTime)">
+            <summary>
+            Returns true if the given <see cref="T:System.DateTime"/> is a weekday.
+            </summary>
+            <param name="DateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DateTimeExtensions.IsWeekend(System.DateTime)">
+            <summary>
+            Returns true if the given <see cref="T:System.DateTime"/> is a weekend.
+            </summary>
+            <param name="DateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DateTimeExtensions.ToUnixTimestamp(System.DateTime)">
+            <summary>
+            Returns the Unix timestamp representation of the current <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="DateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.DayOfWeekExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.DayOfWeek"/> enumeration.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.DayOfWeekExtensions.AddDays(System.DayOfWeek,System.Int32)">
+            <summary>
+            Adds the given number of days to the <see cref="T:System.DayOfWeek"/>.
+            </summary>
+            <param name="DayOfWeek"></param>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DayOfWeekExtensions.IsWeekday(System.DayOfWeek)">
+            <summary>
+            Returns true if the given day of week is a weekday.
+            </summary>
+            <param name="DayOfWeek"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DayOfWeekExtensions.IsWeekend(System.DayOfWeek)">
+            <summary>
+            Returns true if the given day of week is a weekend.
+            </summary>
+            <param name="DayOfWeek"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DictionaryExtentions.Inverse``2(System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            Returns a new <see cref="T:System.Collections.Generic.Dictionary`2"/> which has values in the original dictionary as keys in the new dictionary and keys from the original dictionary as values in the new dictionary.
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="Dictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.DoubleExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Double"/>.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.DoubleExtensions.EqualsApproximately(System.Double,System.Double,System.Double)">
+            <summary>
+            Returns true if a <see cref="T:System.Double"/> is equal to another double within a specified <paramref name="delta"/>.
+            </summary>
+            <param name="double"></param>
+            <param name="obj"></param>
+            <param name="delta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.DoubleExtensions.RoundSignificantFigures(System.Double,System.Int32)">
+            <summary>
+            Rounds a <see cref="T:System.Double"/> to the given number of significant figures.
+            </summary>
+            <param name="double"></param>
+            <param name="significantFigures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Extensions.In``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns true if the item is contained in the given collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Item"></param>
+            <param name="enumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.ICollectionExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.ICollectionExtensions.Add``2(System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{``0,``1}},``0,``1)">
+            <summary>
+            Adds a key and value pair to a given collection of <see cref="T:System.Collections.Generic.KeyValuePair`2" />.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="collection"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.ICollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Adds the specified elements to the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ICollection"></param>
+            <param name="collection"></param>
+        </member>
+        <member name="T:Universal.Common.Extensions.IEnumerableExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Collections.Generic.IEnumerable`1"/> interface.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.CartesianPower``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates elements of the cartesian power of the given enumerable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.CartesianProduct``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates the Cartesian product of two iterables.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Combinations``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates all combinations from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Combinations``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates all combinations of length r from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="r">The number of elements in each combination.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.CombinationsWithMaximumGap``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Enumerates all combinations of length r from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>, where the total number of skipped elements in the combination compared to the original sequence cannot exceed the specified number.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="r"></param>
+            <param name="maximumTotalGap"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Concatenate``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns a string representation of the <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Concatenate``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Returns a string representation of the <see cref="T:System.Collections.Generic.IEnumerable`1"/> using the given separator.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0},``0[])">
+            <summary>
+            Determines whether a sequence contains the specified elements by using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="comparer"></param>
+            <param name="elements"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Contains(System.Collections.Generic.IEnumerable{System.String},System.String,System.StringComparison)">
+            <summary>
+            Determines whether a sequence of strings contains the specified value, using the specified comparison rules.
+            </summary>
+            <param name="IEnumerable"></param>
+            <param name="value"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Cycle``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates an enumerable collection continuously by returning to the start of the collection when the enumerator hits the end.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Cycle``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates an enumerable collection continuously by returning to the start of the collection when the enumerator hits the end until the specified number of elements are returned.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.ElementAtPercentile``1(System.Collections.Generic.IEnumerable{``0},System.Double)">
+            <summary>
+            Returns the element closest to or at the given percentile, expressed as a figure between 0.0 and 1.0.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="percentile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.ElementAtPercentileInterpolated(System.Collections.Generic.IEnumerable{System.Double},System.Double)">
+            <summary>
+            Returns the element at the given percentile, expressed as a figure between 0.0 and 1.0, interpolating to the next result as needed.
+            </summary>
+            <param name="IEnumerable"></param>
+            <param name="percentile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCartesianPower``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates elements of the cartesian power of the given enumerable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCartesianProduct``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates the Cartesian product of two iterables.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCombinations``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates all combinations from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCombinations``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates all combinations of length r from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="r">The number of elements in each combination.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCombinationsWithMaximumGap``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Enumerates all combinations of length r from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>, where the total number of skipped elements in the combination compared to the original sequence cannot exceed the specified number.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="r"></param>
+            <param name="maximumTotalGap"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCyclic``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates an enumerable collection continuously by returning to the start of the collection when the enumerator hits the end.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateCyclic``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates an enumerable collection continuously by returning to the start of the collection when the enumerator hits the end until the specified number of elements are returned.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateNGrams``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates all n-grams from the given enumerable sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.EnumerateNGrams``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates the set of n-grams of a given length from the given enumerable sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs a specified action on each element in the sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="action">The <see cref="T:System.Action`1" /> delegate to perform on each element of the <see cref="T:System.Collections.Generic.IEnumerable`1" />.</param>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.HammingDistance``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns the Hamming distance between two enumerables, using the default <see cref="M:System.Object.Equals(System.Object)"/> method.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IEnumerable`1"/> using the given <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
+            Defers to the implementation of <see cref="M:System.Collections.Generic.IList`1.IndexOf(`0)"/> if the object implements <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="item"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Insert``1(System.Collections.Generic.IEnumerable{``0},System.Int32,``0)">
+            <summary>
+            Inserts the given element into the <see cref="T:System.Collections.Generic.IEnumerable`1"/> at the given position.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="index"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Insert``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Inserts the given elements into the <see cref="T:System.Collections.Generic.IEnumerable`1"/> at the given position.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="index"></param>
+            <param name="values"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Median``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns the median of the given sequence.
+            </summary>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Medians``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns the medians of the sequence, returning the two middle elements if necessary.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Mode``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns a mode of the given sequence. If there are multiple, one of the modes is returned.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Modes``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns all modes of the given sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.NGrams``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates all n-grams from the given enumerable sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.NGrams``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Enumerates the set of n-grams of a given length from the given enumerable sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="n"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Random``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns a random element from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.RandomOrDefault``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns a random element from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/> or null if it is empty.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Random``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Returns n random elements from the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>. If <paramref name="n"/> is greater than the number of elements in the enumerable, all the elements are returned.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Remove``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Returns a new <see cref="T:System.Collections.Generic.IEnumerable`1"/> without the element at the specified index.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="index"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Replace``1(System.Collections.Generic.IEnumerable{``0},System.Int32,``0)">
+            <summary>
+            Reaplces the element at the specified index with the given value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="index"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Replace``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Reaplces the element at the specified index with the given values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="index"></param>
+            <param name="newValues"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Replace``1(System.Collections.Generic.IEnumerable{``0},``0,``0)">
+            <summary>
+            Replaces all elements in a list that are equals to the given value with a new value and returns the result in a new list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Replace``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},``0)">
+            <summary>
+            Replaces all elements in a list matching a given predicate with a new value and returns the result in a new list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="predicate"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Replace``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},System.Func{``0,``0})">
+            <summary>
+            Replaces all elements in a list matching a given predicate with elements generated using a provided function and returns the result in a new list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="predicate"></param>
+            <param name="newValueGenerator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Segment``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Segments the given <see cref="T:System.Collections.Generic.IEnumerable`1"/> into segments of the given size.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.SetCombinationIndices(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Returns a set of indices which can be used to iterate over multiple sets of elements with the given dimensionalities.
+            </summary>
+            <param name="dimensionality">A enumerable set of integers, of which the number of elements gives the total number of discrete sets and each individual element gives the number of elements in each subset.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.SetCombinations``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Iterates over the combinations from the given sets, picking out one element from each set at a time.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="subsets"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.SetEquals``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines if the sequence contains the same elements as the other sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="IEnumerable"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Calculates the corrected standard deviation for the given sequence.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Calculates the corrected standard deviation for the given sequence.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Int32},System.Boolean)">
+            <summary>
+            Calculates the standard deviation for the given sequence.
+            </summary>
+            <param name="source"></param>
+            <param name="corrected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.StandardDeviation(System.Collections.Generic.IEnumerable{System.Double},System.Boolean)">
+            <summary>
+            Calculates the standard deviation for the given sequence.
+            </summary>
+            <param name="source"></param>
+            <param name="corrected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.StandardError(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Calculates the standard error of the mean for the given sequence.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.StandardError(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Calculates the standard error of the mean for the given sequence.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.ToBitSequence(System.Collections.Generic.IEnumerable{System.Boolean})">
+            <summary>
+            Creates a new instance of a <see cref="T:Universal.Common.BitSequence"/> from a given sequence of boolean values.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.ToHashSet``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Creates a new instance of a <see cref="T:System.Collections.Generic.HashSet`1"/> from a given <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.ToSortedSet``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Creates an <see cref="T:System.Collections.Generic.SortedSet`1"/> from an <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="comparer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Variance(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Calculates the variance of the given sequence.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Variance(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Calculates the variance of the given sequence.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.IEnumerableExtensions.Window``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Performs a sliding window enumeration over the given <see cref="T:System.Collections.Generic.IEnumerable`1"/>, returning series of <paramref name="windowSize"/> elements, spaced <paramref name="stepSize"/> elements in the original sequence.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="windowSize"></param>
+            <param name="stepSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.Int16Extensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Int16"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int16Extensions.ReverseEndianness(System.Int16)">
+            <summary>
+            Reverses the endianness of the given short.
+            </summary>
+            <param name="short"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int16Extensions.ToBitSequence(System.Int16)">
+            <summary>
+            Converts the given short into its binary representation as a sequence of bits.
+            </summary>
+            <param name="short"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int16Extensions.ToBitSequence(System.Int16,System.Int32)">
+            <summary>
+            Converts the given short into its binary representation as a sequence of bits of the given length. Additional bits are discarded.
+            </summary>
+            <param name="short"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int16Extensions.ToByteArrayBigEndian(System.Int16)">
+            <summary>
+            Returns a big endian byte array representing this short.
+            </summary>
+            <param name="short"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int16Extensions.ToByteArrayLittleEndian(System.Int16)">
+            <summary>
+            Returns a little endian byte array representing this short.
+            </summary>
+            <param name="short"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.Int32Extensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Int32"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int32Extensions.ReverseEndianness(System.Int32)">
+            <summary>
+            Reverses the endianness of the given int.
+            </summary>
+            <param name="int"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int32Extensions.ToBitSequence(System.Int32)">
+            <summary>
+            Converts the given integer into its binary representation as a sequence of bits.
+            </summary>
+            <param name="int"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int32Extensions.ToBitSequence(System.Int32,System.Int32)">
+            <summary>
+            Converts the given int into its binary representation as a sequence of bits of the given length. Additional bits are discarded.
+            </summary>
+            <param name="int"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int32Extensions.ToByteArrayBigEndian(System.Int32)">
+            <summary>
+            Returns a big endian byte array representing this integer.
+            </summary>
+            <param name="int"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int32Extensions.ToByteArrayLittleEndian(System.Int32)">
+            <summary>
+            Returns a little endian byte array representing this integer.
+            </summary>
+            <param name="int"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int32Extensions.ToDateTime(System.Int32)">
+            <summary>
+            Converts an epoch/unix datetime representation (seconds since 1 Jan 1970) into a <see cref="T:System.DateTime"/> object.
+            </summary>
+            <param name="int"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.Int64Extensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Int64"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int64Extensions.ReverseEndianness(System.Int64)">
+            <summary>
+            Reverses the endianness of the given long.
+            </summary>
+            <param name="long"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int64Extensions.ToBitSequence(System.Int64)">
+            <summary>
+            Converts the given integer into its binary representation as a sequence of bits.
+            </summary>
+            <param name="long"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int64Extensions.ToBitSequence(System.Int64,System.Int32)">
+            <summary>
+            Converts the given int into its binary representation as a sequence of bits of the given length. Additional bits are discarded.
+            </summary>
+            <param name="long"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int64Extensions.ToByteArrayBigEndian(System.Int64)">
+            <summary>
+            Returns a big endian byte array representing this long.
+            </summary>
+            <param name="long"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.Int64Extensions.ToByteArrayLittleEndian(System.Int64)">
+            <summary>
+            Returns a little endian byte array representing this long.
+            </summary>
+            <param name="long"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.RandomExtensions.NextDouble(System.Random,System.Double)">
+            <summary>
+            Returns a random floating-point number that is less than the specified maximum.
+            </summary>
+            <param name="Random"></param>
+            <param name="maxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.RandomExtensions.NextDouble(System.Random,System.Double,System.Double)">
+            <summary>
+            Returns a random floating-point number that is within the specified range.
+            </summary>
+            <param name="Random"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.RandomExtensions.NextNormal(System.Random)">
+            <summary>
+            Returns a random floating-point number approximately sampled from a Normal/Gaussian distribution with a mean of 0 and standard deviation of 1.
+            </summary>
+            <param name="Random"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.RandomExtensions.NextNormal(System.Random,System.Double,System.Double)">
+            <summary>
+            Returns a random floating-point number approximately sampled from a Normal/Gaussian distribution with the given mean and standard deviation.
+            </summary>
+            <param name="Random"></param>
+            <param name="mean"></param>
+            <param name="standardDeviation"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.StackExtensions">
+            <summary>
+            Extensions for the <see cref="T:System.Collections.Generic.Stack`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.StackExtensions.Peek``1(System.Collections.Generic.Stack{``0},System.Int32)">
+            <summary>
+            Returns the object at the specified position from the top of the <see cref="T:System.Collections.Generic.Stack`1"/> without removing it.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Stack"></param>
+            <param name="fromTop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StackExtensions.PeekOrDefault``1(System.Collections.Generic.Stack{``0},System.Int32)">
+            <summary>
+            Returns the object at the specified position from the top of the <see cref="T:System.Collections.Generic.Stack`1"/> without removing it, returning a default value if the stack is not that deep.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Stack"></param>
+            <param name="fromTop"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.StreamExtensions">
+            <summary>
+            Extensions for the <see cref="T:System.IO.Stream"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.PeekByte(System.IO.Stream)">
+            <summary>
+            Returns the next available byte but does not consume it.
+            </summary>
+            <param name="Stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.PeekPreviousByte(System.IO.Stream)">
+            <summary>
+            Reads a byte from the stream in the backwards direction but does not consume it.
+            </summary>
+            <param name="Stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.PeekPreviousBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            Peeks at the previous bytes in the stream, throwing an exception if not enough bytes remain.
+            </summary>
+            <param name="Stream"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.PeekPreviousBytes(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Peeks at the previous bytes in the stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.PeekBytes(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequence of bytes from the current stream but does not advance the position within the stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.PeekBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads a fixed number of bytes from the given stream into a newly allocated buffer but does not advance the position in the stream.
+            Throws an expection if the number of bytes cannot be read.
+            </summary>
+            <param name="Stream"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads a fixed number of bytes from the given stream into a newly allocated buffer and advanced the position in the stream by the specified amount.
+            Throws an expection if the number of bytes cannot be read.
+            </summary>
+            <param name="stream"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadBytesAsync(System.IO.Stream,System.Int32)">
+            <summary>
+            Asynchronously reads a fixed number of bytes from the given stream into a newly allocated buffer and advanced the position in the stream by the specified amount.
+            Throws an expection if the number of bytes cannot be read.
+            </summary>
+            <param name="stream"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadExact(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequence of bytes from the current stream until the number of bytes are read and advances the position in the stream by the specified amount.
+            Returns true if the requested number of bytes are successfully read or false if no bytes were read.
+            Throws an exception if a partial number of bytes were read.
+            </summary>
+            <param name="stream"></param>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadExactAsync(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Asynchronously reads a sequence of bytes from the current stream until the number of bytes are read and advances the position in the stream by the specified amount.
+            Returns true if the requested number of bytes are successfully read or false if no bytes were read.
+            Throws an exception if a partial number of bytes were read.
+            </summary>
+            <param name="Stream"></param>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadExactAsync(System.IO.Stream,System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads a sequence of bytes from the current stream until the number of bytes are read and advances the position in the stream by the specified amount.
+            Returns true if the requested number of bytes are successfully read or false if no bytes were read.
+            Throws an exception if a partial number of bytes were read.
+            </summary>
+            <param name="Stream"></param>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadPreviousByte(System.IO.Stream)">
+            <summary>
+            Reads a byte from the stream by advancing in the backwards direction, or returns -1 if at the start of the stream.
+            </summary>
+            <param name="Stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadPreviousBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads a sequence of bytes from the stream by advancing in the backwards direction, throwing an exception if there are insufficient bytes.
+            </summary>
+            <param name="Stream"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadPrevious(System.IO.Stream,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequence of bytes by moving the position of the stream backwards by the required number of bytes and then reading forward.
+            Returns the number of bytes read.
+            </summary>
+            <param name="Stream"></param>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ReadToEnd(System.IO.Stream)">
+            <summary>
+            Alias of <see cref="M:Universal.Common.Extensions.StreamExtensions.ToString(System.IO.Stream)"/>, as the default name is hidden by <see cref="M:System.Object.ToString"/>.
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ToByteArray(System.IO.Stream)">
+            <summary>
+            Returns the content of the <see cref="T:System.IO.Stream" /> as a byte array, leveraging <see cref="M:System.IO.MemoryStream.ToArray" /> if the <see cref="T:System.IO.Stream" /> is a <see cref="T:System.IO.MemoryStream" /> or copying it to one and then returning the output if it is not.
+            If the <see cref="T:System.IO.Stream" /> supports seeking, the returned byte array will be the contents of the entire <see cref="T:System.IO.Stream" /> and <see cref="P:System.IO.Stream.Position" /> will be preserved.
+            </summary>
+            <param name="Stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ToString(System.IO.Stream)">
+            <summary>
+            Returns the contents of the <see cref="T:System.IO.Stream"/> as a string, using a <see cref="T:System.IO.StreamReader"/> to read its contents and leaving it open.
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.ToStringAsync(System.IO.Stream)">
+            <summary>
+            Returns the contents of the <see cref="T:System.IO.Stream"/> as a string asynchronously, using a <see cref="T:System.IO.StreamReader"/> to read its contents and leaving it open.
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.Write(System.IO.Stream,System.IO.Stream,System.Int64)">
+            <summary>
+            Reads from the given input stream and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.Write(System.IO.Stream,System.IO.Stream,System.Int64,System.Int32)">
+            <summary>
+            Reads from the given input stream and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="count"></param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.Write(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64)">
+            <summary>
+            Reads from the given input stream at the given position, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="position"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.Write(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64,System.Int32)">
+            <summary>
+            Reads from the given input stream at the given position, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="position"></param>
+            <param name="count"></param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64)">
+            <summary>
+            Asynchronously reads from the given input stream, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads from the given input stream, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="count"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Int32)">
+            <summary>
+            Asynchronously reads from the given input stream, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="count"></param>
+            <param name="bufferSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads from the given input stream, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="count"></param>
+            <param name="bufferSize"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64)">
+            <summary>
+            Asynchronously reads from the given input stream, which must support seeking via its <see cref="P:System.IO.Stream.Position"/> property, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="position"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads from the given input stream, which must support seeking via its <see cref="P:System.IO.Stream.Position"/> property, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="position"></param>
+            <param name="count"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64,System.Int32)">
+            <summary>
+            Asynchronously reads from the given input stream, which must support seeking via its <see cref="P:System.IO.Stream.Position"/> property, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="position"></param>
+            <param name="count"></param>
+            <param name="bufferSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.IO.Stream,System.Int64,System.Int64,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads from the given input stream, which must support seeking via its <see cref="P:System.IO.Stream.Position"/> property, and writes the output to the current stream.
+            </summary>
+            <param name="Stream"></param>
+            <param name="input"></param>
+            <param name="position"></param>
+            <param name="count"></param>
+            <param name="bufferSize"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.AsBinaryRepresentation(System.String)">
+            <summary>
+            Returns a <see cref="T:System.Collections.BitArray"/> with bits equivalent to the bits in the given string.
+            Note that in accordance with the semantics of <see cref="T:System.Collections.BitArray"/> the least significant bit is stored in index 0
+            which means that the indices would be reversed compared to the indices of the bits in the string binary representation.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.CharacterPositionSimilarity(System.String,System.String)">
+            <summary>
+            Calculates a normalized score for the positional similarity of characters in <paramref name="other"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.CharacterPositionSimilarity(System.String,System.String,System.StringComparison)">
+            <summary>
+            Calculates a normalized score for the positional similarity of characters in <paramref name="other"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ClosestLevensheinDistanceMatches(System.String,System.String)">
+            <summary>
+            Enumerates the substrings in the given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ClosestLevensheinDistanceMatches(System.String,System.String,System.StringComparison)">
+            <summary>
+            Enumerates the substrings in the given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ClosestLevenshteinDistanceSubstrings(System.String,System.String)">
+            <summary>
+            Returns the corresponding substrings in a given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ClosestLevenshteinDistanceSubstrings(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns the corresponding substrings in a given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ClosestSubstringLevenshteinDistance(System.String,System.String)">
+            <summary>
+            Calculates the lowest Levenshtein distance achievable for the given <paramref name="substring"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ClosestSubstringLevenshteinDistance(System.String,System.String,System.StringComparison)">
+            <summary>
+            Calculates the lowest Levenshtein distance achievable for the given <paramref name="substring"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.CommonCharacterScore(System.String,System.String)">
+            <summary>
+            Returns a score that is representative of the number of similar characters in both strings.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.CommonCharacterScore(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns a score that is representative of the number of similar characters in both strings.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns a value indicating whether a specified substring occurs within this string.
+            </summary>
+            <param name="string"></param>
+            <param name="value"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when the provided string is null.</exception>  
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.DamerauLevenshteinDistance(System.String,System.String,System.Int32)">
+            <summary>
+            Calculates the Damerau-Levenshtein distance of two strings, truncating the calculation at a given <paramref name="threshold"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <param name="threshold"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.DamerauLevenshteinDistance(System.String,System.String,System.StringComparison,System.Int32)">
+            <summary>
+            Calculates the Damerau-Levenshtein distance of two strings, truncating the calculation at a given <paramref name="threshold"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <param name="comparisonType"></param>
+            <param name="threshold"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when the original string is null.</exception>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.DecodeAsBase32String(System.String)">
+            <summary>
+            Decodes the given string as a base-32 string, returning the original bytes.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.DecodeAsBase64String(System.String)">
+            <summary>
+            Decodes the given string as a base-64 string, returning the original bytes.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.DecodeAsBase64UrlSafeString(System.String)">
+            <summary>
+            Decodes the given string as a URL-safe base-64 string, in accordance with RFC 4648.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.EnumerateClosestLevensheinDistanceMatches(System.String,System.String)">
+            <summary>
+            Enumerates the substrings in the given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.EnumerateClosestLevensheinDistanceMatches(System.String,System.String,System.StringComparison)">
+            <summary>
+            Enumerates the substrings in the given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.EnumerateClosestLevenshteinDistanceSubstrings(System.String,System.String)">
+            <summary>
+            Returns the corresponding substrings in a given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.EnumerateClosestLevenshteinDistanceSubstrings(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns the corresponding substrings in a given string that will produce the lowest Levenshtein Distance.
+            </summary>
+            <param name="string"></param>
+            <param name="substring"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.HammingDistance(System.String,System.String)">
+            <summary>
+            Returns the Hamming distance of two strings, which must be of equal length.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.IndicesOf(System.String,System.String[])">
+            <summary>
+            Returns an array of <see cref="T:System.Text.RegularExpressions.Match"/> for <paramref name="values"/> in a given string.
+            </summary>
+            <param name="string"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Returns if a string is null or empty.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.LevenshteinDistance(System.String,System.String)">
+            <summary>
+            Returns the Levenshtein distance of two strings.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.LevenshteinDistance(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns the Levenshtein distance of two strings.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.NormalizeNewLines(System.String,System.String)">
+            <summary>
+            Replaces all new line characters with a given representation.
+            </summary>
+            <param name="string"></param>
+            <param name="newLine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Parse(System.String,System.Type)">
+            <summary>
+            Returns a parsed object of the given type that the string represents.
+            </summary>
+            <param name="string"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Parse``1(System.String)">
+            <summary>
+            Returns a parsed object of the given type that the string represents.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Replace(System.String,System.String,System.String,Universal.Common.Extensions.StringReplaceOptions)">
+            <summary>
+            Returns a new string with <paramref name="oldValue"/> replaced with <paramref name="newValue"/> given specified <paramref name="options"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Replace(System.String,System.String[],System.String)">
+            <summary>
+            Returns a new string with references to <paramref name="oldValues"/> replaced with a given <paramref name="newValue"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="oldValues"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Replace(System.String,System.Text.RegularExpressions.Match,System.String)">
+            <summary>
+            Returns a new string with each <see cref="T:System.Text.RegularExpressions.Match"/> replaced with <paramref name="newValue"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="match"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Replace(System.String,System.Text.RegularExpressions.Match[],System.String)">
+            <summary>
+            Returns a new string with all <see cref="T:System.Text.RegularExpressions.Match"/> instances replaced with <paramref name="newValue"/>.
+            </summary>
+            <param name="string"></param>
+            <param name="matches"></param>
+            <param name="newValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Replace(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Returns a new string with replacements specified in a given mapping dictionary.
+            </summary>
+            <param name="string"></param>
+            <param name="newValueMapping"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.RemoveDiacritics(System.String)">
+            <summary>
+            Removes diacritics from the given string.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.RemoveSqlComments(System.String)">
+            <summary>
+            Removes SQL-style comments from a given string.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Similarity(System.String,System.String)">
+            <summary>
+            Calculates a similarity score between this string and a specified string.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.Similarity(System.String,System.String,System.StringComparison)">
+            <summary>
+            Calculates a similarity score between this string and a specified string.
+            </summary>
+            <param name="string"></param>
+            <param name="other"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.StreakScore(System.String,System.String)">
+            <summary>
+            Calculates the streak score between two strings.
+            </summary>
+            <param name="string"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.StreakScore(System.String,System.String,System.StringComparison)">
+            <summary>
+            Calculates the streak score between two strings.
+            </summary>
+            <param name="string"></param>
+            <param name="value"></param>
+            <param name="comparisonType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToDateTime(System.String)">
+            <summary>
+            Converts the <see cref="T:System.String"/> to a <see cref="T:System.DateTime"/> equivalent.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToDateTime(System.String,System.String)">
+            <summary>
+            Converts the <see cref="T:System.String"/> to a <see cref="T:System.DateTime"/> equivalent.
+            </summary>
+            <param name="string"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToDateTime(System.String,System.String[])">
+            <summary>
+            Converts the <see cref="T:System.String"/> to a <see cref="T:System.DateTime"/> equivalent.
+            </summary>
+            <param name="string"></param>
+            <param name="formats"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToDateTime(System.String,System.Xml.XmlDateTimeSerializationMode)">
+            <summary>
+            Converts the <see cref="T:System.String"/> to a <see cref="T:System.DateTime"/> equivalent.
+            </summary>
+            <param name="string"></param>
+            <param name="dateTimeOption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToEscapedUnicode(System.String)">
+            <summary>
+            Returns a string containing the unicode literal representation of all characters by calling <see cref="M:Universal.Common.Extensions.CharExtensions.ToEscapedUnicode(System.Char)"/>.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToInt32(System.String)">
+            <summary>
+            Converts an English representation of a number to an <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToInt64(System.String)">
+            <summary>
+            Converts an English representation of a number to a <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToStream(System.String)">
+            <summary>
+            Writes the string to a new <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToSubscript(System.String)">
+            <summary>
+            Returns the subscript representation of a given string. Throws an exception if no conversion for a character is found.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToSuperscript(System.String)">
+            <summary>
+            Returns the superscript representation of a given string. Throws an exception if no conversion for a character is found.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToTimeSpan(System.String)">
+            <summary>
+            Converts the <see cref="T:System.String"/> to a <see cref="T:System.TimeSpan"/> equivalent.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToTitleCase(System.String)">
+            <summary>
+            Converts the string to title case.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToTitleCase(System.String,System.Globalization.TextInfo)">
+            <summary>
+            Converts the string to title case.
+            </summary>
+            <param name="string"></param>
+            <param name="textInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.StringExtensions.ToXmlSafeString(System.String)">
+            <summary>
+            Returns a new string with forbidden XML characters removed.
+            </summary>
+            <param name="string"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.TimerExtensions.Restart(System.Timers.Timer)">
+            <summary>
+            Calls <see cref="M:System.Timers.Timer.Stop"/> followed by <see cref="M:System.Timers.Timer.Start"/>.
+            </summary>
+            <param name="Timer"></param>
+        </member>
+        <member name="T:Universal.Common.Extensions.UInt16Extensions">
+            <summary>
+            Extension methods for the <see cref="T:System.UInt16"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt16Extensions.ReverseEndianness(System.UInt16)">
+            <summary>
+            Reverses the endianness of the given unsigned short.
+            </summary>
+            <param name="ushort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt16Extensions.ToBitSequence(System.UInt16)">
+            <summary>
+            Converts the given unsigned short into its binary representation as a sequence of bits.
+            </summary>
+            <param name="ushort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt16Extensions.ToBitSequence(System.UInt16,System.Int32)">
+            <summary>
+            Converts the given unsigned short into its binary representation as a sequence of bits of the given length. Additional bits are discarded.
+            </summary>
+            <param name="ushort"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt16Extensions.ToByteArrayBigEndian(System.UInt16)">
+            <summary>
+            Returns a big endian byte array representing this unsigned short.
+            </summary>
+            <param name="ushort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt16Extensions.ToByteArrayLittleEndian(System.UInt16)">
+            <summary>
+            Returns a little endian byte array representing this unsigned short.
+            </summary>
+            <param name="ushort"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.UInt32Extensions">
+            <summary>
+            Extension methods for the <see cref="T:System.UInt32"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt32Extensions.ReverseEndianness(System.UInt32)">
+            <summary>
+            Reverses the endianness of the given unsigned int.
+            </summary>
+            <param name="uint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt32Extensions.ToBitSequence(System.UInt32)">
+            <summary>
+            Converts the given unsigned integer into its binary representation as a sequence of bits.
+            </summary>
+            <param name="uint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt32Extensions.ToBitSequence(System.UInt32,System.Int32)">
+            <summary>
+            Converts the given unsigned int into its binary representation as a sequence of bits of the given length. Additional bits are discarded.
+            </summary>
+            <param name="uint"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt32Extensions.ToByteArrayBigEndian(System.UInt32)">
+            <summary>
+            Returns a big endian byte array representing this unsigned integer.
+            </summary>
+            <param name="uint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt32Extensions.ToByteArrayLittleEndian(System.UInt32)">
+            <summary>
+            Returns a little endian byte array representing this unsigned integer.
+            </summary>
+            <param name="uint"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Extensions.UInt64Extensions">
+            <summary>
+            Extension methods for the <see cref="T:System.UInt64"/> class.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt64Extensions.ReverseEndianness(System.UInt64)">
+            <summary>
+            Reverses the endianness of the given unsigned long.
+            </summary>
+            <param name="ulong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt64Extensions.ToBitSequence(System.UInt64)">
+            <summary>
+            Converts the given unsigned long into its binary representation as a sequence of bits.
+            </summary>
+            <param name="ulong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt64Extensions.ToBitSequence(System.UInt32,System.Int32)">
+            <summary>
+            Converts the given unsigned long into its binary representation as a sequence of bits of the given length. Additional bits are discarded.
+            </summary>
+            <param name="ulong"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt64Extensions.ToByteArrayBigEndian(System.UInt64)">
+            <summary>
+            Returns a big endian byte array representing this unsigned long.
+            </summary>
+            <param name="ulong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Universal.Common.Extensions.UInt64Extensions.ToByteArrayLittleEndian(System.UInt64)">
+            <summary>
+            Returns a little endian byte array representing this unsigned long.
+            </summary>
+            <param name="ulong"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Universal.Common.Number">
+            <summary>
+            Class representing a base numeric type that is interconvertible between all base numeric types.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsUInt16">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a ushort.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsInt16">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a short.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsUInt32">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a uint.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsInt32">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a int.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsUInt64">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a ulong.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsInt64">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a long.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsSingle">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a float.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsDouble">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a double.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.IsDecimal">
+            <summary>
+            Gets a value indicating if this <see cref="T:Universal.Common.Number"/> is a decimal.
+            </summary>
+        </member>
+        <member name="P:Universal.Common.Number.NumberType">
+            <summary>
+            Returns the internal storage type of this <see cref="T:Universal.Common.Number"/>.
+            </summary>
+        </member>
+        <member name="M:Universal.Common.Number.#ctor(System.UInt16)">
+            <summary>
+            Constructs a new instance of the <see cref="T:Universal.Common.Number"/> class with the given value.
+            </summary>
+            <param name="value"></param>
+        </member>
+       

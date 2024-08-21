@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Universal.Common</id>
+    <version>6.4.5</version>
+    <authors>Andrew Ong</authors>
+    <owners>Andrew Ong</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">CC0-1.0</license>
+    <licenseUrl>https://licenses.nuget.org/CC0-1.0</licenseUrl>
+    <description>Class library containing useful general-programming classes and extension methods for existing types.</description>
+    <releaseNotes>Added generalized methods to calculate the modes and medians of sequences, inlucluding versions that return all of them when a tie occurs. New method to determine set equality of any enumerable.</releaseNotes>
+    <tags>Utility Extension Method Comment SQL String UriBuilder Number Bit Byte Sequence BitSequence Value Base32 DataUri DateTimeRange TimeSpanRange Month Year Random Window Segment Stack</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+</package>

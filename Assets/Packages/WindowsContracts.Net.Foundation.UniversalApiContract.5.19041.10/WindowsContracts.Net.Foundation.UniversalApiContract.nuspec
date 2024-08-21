@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>WindowsContracts.Net.Foundation.UniversalApiContract</id>
+    <version>5.19041.10</version>
+    <authors>埃博拉酱</authors>
+    <license type="file">README.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>图标.png</icon>
+    <projectUrl>https://github.com/Silver-Fang/WindowsContracts.Net</projectUrl>
+    <description>适用于.Net 5的Windows.Foundation.UniversalApiContract程序集</description>
+    <releaseNotes>20210511</releaseNotes>
+    <copyright>埃博拉酱</copyright>
+    <repository url="https://github.com/Silver-Fang/WindowsContracts.Net" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="WindowsContracts.Net.Networking.Connectivity.WwanContract" version="5.19041.2.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
